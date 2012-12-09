@@ -1,7 +1,7 @@
-<h1>Listing patients</h1>
+<h1>Patients</h1>
 
-<table>
-  <tr>
+<table class="main">
+ <tr>
     <th>Name</th>
     <th>Surname</th>
     <th>Date of birth</th>
@@ -31,12 +31,14 @@
     <td><%= patient.email %></td>
     <td><%= patient.phone %></td>
     <td><%= patient.medical_history %></td>
-    <td><%= link_to 'Show', patient %></td>
-    <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
-    <td><%= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <th><%= button_to 'Show', patient, :method => "get"  %></th>
+    <th><%= button_to 'Edit', edit_patient_path(patient), :method => "get" %></th>
+    <th><%= button_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' } %></th>
+  
   </tr>
-<% end %>
-</table>
+   <% end %>
+ </table>
 
 <br />
 
